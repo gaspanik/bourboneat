@@ -1,0 +1,37 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+body {
+	background-color: #FFF;
+}
+
+div.container {
+	@include outer-container;
+}
+
+button {
+	@include button(#f9f9f9);
+}
+
+section.element {
+	@include span-columns(8);
+	h1 {
+		font-size: golden-ratio(20px, 1);
+	}
+}
+aside {
+	@include span-columns(4);
+}
+
+$mobile: new-breakpoint(max-width 47.25em 12);
+
+section.element {
+	@include media($mobile) {
+		@include span-columns(12);
+	}
+}
+aside {
+	@include media($mobile) {
+		@include span-columns(12);
+	}
+}
